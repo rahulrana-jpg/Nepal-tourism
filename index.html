@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal Tourism Board | Explore Nepal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://unpkg.com/three@0.154.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.154.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js" defer></script>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header-animate">
+    <div class="container header-container">
+      <a href="/" class="logo" aria-label="Nepal Tourism Home" style="display: flex; align-items: center;">
+        <video src="Animation - 1750787845805.webm" type="video/webm" loading="lazy" alt="Nepal Tourism Logo" autoplay muted loop playsinline style="height:90px; width:auto; margin-right:8px;"></video>
+        <span>Nepal Tourism</span>
+      </a>
+      <nav id="main-nav" aria-label="Main Navigation" class="main-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#activities">Things To Do</a></li>
+          <li><a href="#events-festivals">Events & Festivals</a></li>
+            <li><a href="#food-culture">Food & Culture</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH VIDEO BACKGROUND -->
+  <section class="hero">
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+      <source src="12750575_1920_1080_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+    <img src="https://ntb.gov.np/storage/website/overlay2.svg" width="2560" class="el-image lozad uk-position-relative" style="z-index: 1;transform: translateY(21px) scale(1.1);" alt="" target="!*">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section light" style="position:relative; overflow:hidden;">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline 
+    style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <source src="about nepal.mp4" type="video/mp4" loading="lazy">
+    Your browser does not support the video tag.
+  </video>
+  <div class="container split" style="position:relative; z-index:1;">
+    <div class="about-blur-box">
+      <h2>About Nepal Tourism Board</h2>
+      <p>
+        Welcome to Nepal Tourism – your gateway to exploring the natural beauty, cultural richness, and spiritual heritage of Nepal. 
+        From the majestic Himalayas and serene lakes to ancient temples and vibrant festivals, we bring you the best of what Nepal has to offer.
+        Whether you're an adventurer, a nature lover, or a cultural explorer, Nepal Tourism is here to guide your journey with trusted information, local insights, and unforgettable experiences.
+      </p>
+      <a href="#contact" class="btn secondary">Learn More</a>
+    </div>
+   
+    </div>
+  </div>
+</section>
+
+  <!-- DESTINATIONS SECTION -->
+  <section id="destinations" class="section">
+  <div class="container">
+    <h2>Top Destinations</h2>
+    <div class="grid grid-3">
+      <a href="https://en.wikipedia.org/wiki/Kathmandu" class="card" target="_blank" rel="noopener noreferrer">
+          <video autoplay muted loop playsinline style="width:100%; height:180px; object-fit:cover; border-radius:8px; display:block;">
+            <source src="Kathmandu.mp4" type="video/mp4" loading="lazy">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Kathmandu</h3>
+          <p>The vibrant capital city, rich in culture and history.</p>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Pokhara" class="card" target="_blank" rel="noopener noreferrer">
+          <video autoplay muted loop playsinline style="width:100%; height:180px; object-fit:cover; border-radius:8px; display:block;">
+            <source src="prokha.mp4" type="video/mp4" loading="lazy">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Pokhara</h3>
+          <p>Gateway to the Annapurna region, famous for lakes and adventure sports.</p>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Chitwan_National_Park" class="card" target="_blank" rel="noopener noreferrer">
+          <video autoplay muted loop playsinline style="width:100%; height:180px; object-fit:cover; border-radius:8px; display:block;">
+            <source src="Chitwan.mp4" type="video/mp4" loading="lazy">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Chitwan</h3>
+          <p>Home to Chitwan National Park and diverse wildlife.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP & CARD SECTION -->
+<section id="map-card-section" class="section" style="width: 100%;">
+  <div class="map-card-flex" style="display: flex; gap: 2em; align-items: flex-start; justify-content: center; flex-wrap: wrap; padding: 2rem; position:relative;">
+    <!-- Left: 6 Image Boxes -->
+    <div class="card" style="flex:1 1 320px; background-color: #fff; border-radius:12px; box-shadow:0 2px 8px #0001; padding:1.5em;">
+      <h3 style="text-align:center;">Top Places</h3>
+      <div class="places-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.2em;">
+        <div class="place-box">
+          <img src="kathmandu.jpg" alt="Kathmandu" />
+          <div class="place-name">Kathmandu</div>
+        </div>
+        <div class="place-box">
+          <img src="pokhara.jpg" alt="Pokhara" />
+          <div class="place-name">Pokhara</div>
+        </div>
+        <div class="place-box">
+          <img src="chitwan.jpg" alt="Chitwan" />
+          <div class="place-name">Chitwan</div>
+        </div>
+        <div class="place-box">
+          <img src="lumbini place.jpg" alt="Lumbini" />
+          <div class="place-name">Lumbini</div>
+        </div>
+        <div class="place-box">
+          <img src="mustang.jpg" alt="Mustang" />
+          <div class="place-name">Mustang</div>
+        </div>
+        <div class="place-box">
+          <img src="ilam.jpg" alt="Ilam" />
+          <div class="place-name">Ilam</div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: Map with Points -->
+    <div class="map-card-static" style="flex:1 1 350px; max-width:450px; position:relative;">
+      <img src="https://ntb.gov.np/storage/website/nepal-55265453.png" alt="Map of Nepal" style="width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px #0001;">
+      <!-- Points on the map (adjust left/top for each place) -->
+      <div class="map-point" style="left: 55%; top: 18%;" data-img="kathmandu.jpg"></div>
+      <div class="map-point" style="left: 40%; top: 35%;" data-img="pokhara.jpg"></div>
+      <div class="map-point" style="left: 30%; top: 60%;" data-img="chitwan.jpg"></div>
+      <div class="map-point" style="left: 60%; top: 80%;" data-img="lumbini place.jpg"></div>
+      <div class="map-point" style="left: 20%; top: 25%;" data-img="mustang.jpg"></div>
+      <div class="map-point" style="left: 80%; top: 40%;" data-img="ilam.jpg"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- ACTIVITIES SECTION -->
+  <section id="activities" class="section light">
+    <div class="container">
+      <h2>Things To Do</h2>
+      <div class="grid grid-4 activities">
+        <a href="https://www.tripadvisor.com/Attractions-g293889-Activities-c61-t219-Nepal.html" class="activity card slide-in" style="text-decoration:none; color:inherit;" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="trakking.jpg"
+            alt="Trekking"
+            style="width:100px; height:100px; display:block; margin:0 auto 0.5em auto; background:none; object-fit:cover; border-radius:8px; transform: scale(1.5);"
+          />
+          <h4>Trekking</h4>
+          <p>Explore world-famous trekking routes like Everest and Annapurna.</p>
+        </a>
+        <a href="https://www.tripadvisor.com/Attractions-g293889-Activities-c42-t225-Nepal.html" class="activity card slide-in" style="text-decoration:none; color:inherit;" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="culture tour.jpg"
+            alt="Cultural Tours"
+            style="width:100px; height:100px; display:block; margin:0 auto 0.5em auto; background:none; object-fit:cover; border-radius:8px; transform: scale(1.5);"
+          />
+          <h4>Cultural Tours</h4>
+          <p>Experience temples, heritage, and festivals across Nepal.</p>
+        </a>
+        <a href="https://www.tripadvisor.com/Attractions-g293889-Activities-c42-t225-Nepal.html" class="activity card slide-in" style="text-decoration:none; color:inherit;" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="wildlife safari.jpg"
+            alt="Wildlife Safari"
+            style="width:100px; height:100px; display:block; margin:0 auto 0.5em auto; background:none; object-fit:cover; border-radius:8px; transform: scale(1.5);" 
+          />
+          <h4>Wildlife Safari</h4>
+          <p>Visit national parks for rhinos, tigers, and more.</p>
+        </a>
+        <a href="https://theculturetrip.com/asia/nepal/articles/the-best-meditation-retreats-in-nepa" class="activity card slide-in" style="text-decoration:none; color:inherit;" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="wellness.jpeg"
+            alt="wellness"
+            auto-rotate 
+            camera-controls
+            style="width:100px; height:100px; display:block; margin:0 auto 0.5em auto; background:none; transform: scale(1.5);">
+          >
+          <h4>Wellness & Meditation</h4>
+          <p>Find peace with yoga and meditation retreats.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS & FESTIVALS SECTION -->
+<!-- EVENTS & FESTIVALS SECTION (Bigger Images, Side by Side, Clickable Cards for Wikipedia) -->
+<section id="events-festivals" class="section light">
+  <div class="container">
+    <h2>Events & Festivals of Nepal</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 2em;">
+      Nepal is renowned for its rich tradition of festivals and vibrant events throughout the year. Here are some of the most colorful occasions that showcase the country’s diversity.
+    </p>
+    <div class="grid grid-5 events-festivals-grid" style="display: flex; flex-wrap: wrap; gap: 1.5em; justify-content: center;">
+      <!-- Festival 1 -->
+      <a href="https://en.wikipedia.org/wiki/Dashain" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card" style="height: 230px; min-width: 170px; max-width: 210px; flex: 1 1 170px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; cursor:pointer;">
+          <img src="happy-bijaya-dashami-with-jamara-flowers-diyo-thali_541815-732.jpeg" alt="Dashain Festival" style="height:75px;width:75px;object-fit:cover; margin-top:18px;">
+          <h4 style="margin:10px 0 4px 0;">Dashain</h4>
+          <p style="height:48px;overflow:hidden;text-overflow:ellipsis; margin-bottom:auto; text-align:center; font-size:0.95em; line-height:1.35;">
+            <!-- Add description here if needed -->
+          </p>
+        </div>
+      </a>
+      <!-- Festival 2 -->
+      <a href="https://en.wikipedia.org/wiki/Tihar_(festival)" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card" style="height: 230px; min-width: 170px; max-width: 210px; flex: 1 1 170px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; cursor:pointer;">
+          <img src="tihar.jpg" alt="Tihar Festival" style="height:75px;width:75px;object-fit:cover; margin-top:18px;">
+          <h4 style="margin:10px 0 4px 0;">Tihar</h4>
+          <p style="height:48px;overflow:hidden;text-overflow:ellipsis; margin-bottom:auto; text-align:center; font-size:0.95em; line-height:1.35;">
+            <!-- Add description here if needed -->
+          </p>
+        </div>
+      </a>
+      <!-- Festival 3 -->
+      <a href="https://en.wikipedia.org/wiki/Holi" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card" style="height: 230px; min-width: 170px; max-width: 210px; flex: 1 1 170px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; cursor:pointer;">
+          <img src="holi.jpg" alt="Holi Festival" style="height:75px;width:75px;object-fit:cover; margin-top:18px;">
+          <h4 style="margin:10px 0 4px 0;">Holi</h4>
+          <p style="height:48px;overflow:hidden;text-overflow:ellipsis; margin-bottom:auto; text-align:center; font-size:0.95em; line-height:1.35;">
+            <!-- Add description here if needed -->
+          </p>
+        </div>
+      </a>
+      <!-- Event 1 -->
+      <a href="https://en.wikipedia.org/wiki/Everest_Marathon" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card" style="height: 230px; min-width: 170px; max-width: 210px; flex: 1 1 170px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; cursor:pointer;">
+          <img src="everest marthon.jpeg" alt="Everest Marathon" style="height:75px;width:75px;object-fit:cover; margin-top:18px;">
+          <h4 style="margin:10px 0 4px 0;">Everest Marathon</h4>
+          <p style="height:48px;overflow:hidden;text-overflow:ellipsis; margin-bottom:auto; text-align:center; font-size:0.95em; line-height:1.35;">
+            <!-- Add description here if needed -->
+          </p>
+        </div>
+      </a>
+      <!-- Event 2 -->
+      <a href="https://en.wikipedia.org/wiki/Pokhara_Street_Festival" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card" style="height: 230px; min-width: 170px; max-width: 210px; flex: 1 1 170px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; cursor:pointer;">
+          <img src="panipuri-74974_1280.jpg" alt="Pokhara Street Festival" style="height:75px;width:75px;object-fit:cover; margin-top:18px;">
+          <h4 style="margin:10px 0 4px 0;">Pokhara Street Festival</h4>
+          <p style="height:48px;overflow:hidden;text-overflow:ellipsis; margin-bottom:auto; text-align:center; font-size:0.95em; line-height:1.35;">
+            <!-- Add description here if needed -->
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD & CULTURE SECTION -->
+<section id="food-culture" class="section" style="background:#f7f7f7;">
+  <div class="container">
+    <h2>Food & Culture</h2>
+    <p class="intro">
+      Experience Nepal’s vibrant food scene and cultural traditions—  
+      from momo-making workshops to local festivals.
+    </p>
+    <div class="grid grid-4 activities">
+      <!-- Food Experience Card -->
+      <a href="#" class="card activity">
+        <img src="momo.jpg" alt="Momo Dumplings" loading="lazy">
+        <h4>Momo Making</h4>
+        <p>Join a hands-on class learning to make Nepal's favorite dumplings.</p>
+      </a>
+      <!-- Cultural Walk Card -->
+      <a href="#" class="card activity">
+        <img src="culture tour.jpg" alt="Cultural Walk" loading="lazy">
+        <h4>Cultural Walks</h4>
+        <p>Explore ancient temples, local markets & traditional neighborhoods.</p>
+      </a>
+      <!-- Street Food Card -->
+      <a href="#" class="card activity">
+        <img src="chatpate.jpg" alt="Street Food" loading="lazy">
+        <h4>Street Food Tour</h4>
+        <p>Taste local snacks—chatpate, sel roti, and real Nepali tea stalls.</p>
+      </a>
+      <!-- Festival Card -->
+      <a href="#" class="card activity">
+        <img src="sel roti.jpeg" alt="Festival Food" loading="lazy">
+        <h4>Festival Eats</h4>
+        <p>Join food stalls at Dashain & Tihar to sample mithai & seasonal treats.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="container split">
+      <form id="contact-form" autocomplete="off" novalidate>
+        <h2>Contact Us</h2>
+        <label>
+          <span class="sr-only">Your Name</span>
+          <input type="text" name="name" placeholder="Your Name" required>
+        </label>
+        <label>
+          <span class="sr-only">Your Email</span>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </label>
+        <label>
+          <span class="sr-only">Your Message</span>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send Message</button>
+        <div id="form-message" aria-live="polite"></div>
+      </form>
+      <div class="contact-info">
+        <h3>Visit Us</h3>
+        <address>
+          NTB Headquarters,<br>
+          PO Box 11018, Kathmandu, Nepal
+        </address>
+        <p>Email: <a href="mailto:info@ntb.gov.np">info@ntb.gov.np</a><br>
+           Phone: <a href="tel:+977-1-4256909">+977-1-4256909</a></p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook" title="Facebook">🌐</a>
+          <a href="#" aria-label="Twitter" title="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram" title="Instagram">📸</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Nepal Tourism Board. All Rights Reserved.</p>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
