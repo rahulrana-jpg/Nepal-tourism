@@ -64,17 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.reset();
   });
 
-  // // Map logic
-  // const src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Stack_Exchange_logo_and_wordmark.svg/375px-Stack_Exchange_logo_and_wordmark.svg.png";
-  // const popupContent = document.createElement("div")
-  // popupContent.innerHTML = "<img src=" + src + "'>"
-  //                        + "<a target='_blank' href='" + src + "'>See the image</a>"
-
-  // const map1 = L.map('map').setView([10, 20]);
-  // const marker = L.marker([10, 20]).bindPopup(
-  //     popupContent,
-  //     { maxWidth: "auto" }
-  // ).addTo(map1);
+  
 
   // Add .slide-in to all cards you want animated
   document.querySelectorAll('.card').forEach(card => card.classList.add('slide-in'));

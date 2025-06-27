@@ -25,13 +25,13 @@
         <video src="Animation - 1750787845805.webm" type="video/webm" loading="lazy" alt="Nepal Tourism Logo" autoplay muted loop playsinline style="height:90px; width:auto; margin-right:8px;"></video>
         <span>Nepal Tourism</span>
       </a>
-      <nav id="main-nav" aria-label="Main Navigation" class="main-nav">
+      <nav id="main-nav" aria-label="Main Navigation" >
         <ul>
-          <li><a href="#about">About</a></li>
+          <li ><a href="#about">About</a></li>
           <li><a href="#destinations">Destinations</a></li>
           <li><a href="#activities">Things To Do</a></li>
           <li><a href="#events-festivals">Events & Festivals</a></li>
-            <li><a href="#food-culture">Food & Culture</a></li>
+          <li><a href="#food-culture">Food & Culture</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -110,22 +110,22 @@
   </section>
 
   <!-- MAP & CARD SECTION -->
-<section id="map-card-section" class="section" style="width: 100%;">
-  <div class="map-card-flex" style="display: flex; gap: 2em; align-items: flex-start; justify-content: center; flex-wrap: wrap; padding: 2rem; position:relative;">
+<section id="map-card-section" class="section">
+  <div class="map-card-flex">
     <!-- Left: 6 Image Boxes -->
-    <div class="card" style="flex:1 1 320px; background-color: #fff; border-radius:12px; box-shadow:0 2px 8px #0001; padding:1.5em;">
-      <h3 style="text-align:center;">Top Places</h3>
-      <div class="places-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.2em;">
+    <div class="card top-places-card">
+      <h3>Top Places</h3>
+      <div class="places-grid">
         <div class="place-box">
-          <img src="kathmandu.jpg" alt="Kathmandu" />
+          <img src="kathmandu map.jpg" alt="Kathmandu" />
           <div class="place-name">Kathmandu</div>
         </div>
         <div class="place-box">
-          <img src="pokhara.jpg" alt="Pokhara" />
+          <img src="pokhara map.jpg" alt="Pokhara" />
           <div class="place-name">Pokhara</div>
         </div>
         <div class="place-box">
-          <img src="chitwan.jpg" alt="Chitwan" />
+          <img src="chitawan map.jpg" alt="Chitwan" />
           <div class="place-name">Chitwan</div>
         </div>
         <div class="place-box">
@@ -133,25 +133,24 @@
           <div class="place-name">Lumbini</div>
         </div>
         <div class="place-box">
-          <img src="mustang.jpg" alt="Mustang" />
+          <img src="mustang map.jpg" alt="Mustang" />
           <div class="place-name">Mustang</div>
         </div>
         <div class="place-box">
-          <img src="ilam.jpg" alt="Ilam" />
+          <img src="ilam map.jpg" alt="Ilam" />
           <div class="place-name">Ilam</div>
         </div>
       </div>
     </div>
     <!-- Right: Map with Points -->
-    <div class="map-card-static" style="flex:1 1 350px; max-width:450px; position:relative;">
-      <img src="https://ntb.gov.np/storage/website/nepal-55265453.png" alt="Map of Nepal" style="width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px #0001;">
-      <!-- Points on the map (adjust left/top for each place) -->
-      <div class="map-point" style="left: 55%; top: 18%;" data-img="kathmandu.jpg"></div>
-      <div class="map-point" style="left: 40%; top: 35%;" data-img="pokhara.jpg"></div>
-      <div class="map-point" style="left: 30%; top: 60%;" data-img="chitwan.jpg"></div>
-      <div class="map-point" style="left: 60%; top: 80%;" data-img="lumbini place.jpg"></div>
-      <div class="map-point" style="left: 20%; top: 25%;" data-img="mustang.jpg"></div>
-      <div class="map-point" style="left: 80%; top: 40%;" data-img="ilam.jpg"></div>
+    <div class="map-card-static">
+      <img src="https://ntb.gov.np/storage/website/nepal-55265453.png" alt="Map of Nepal" class="big-map-img">
+      <div class="map-point" style="left: 63%; top: 63%;" data-img="kathmandu map.jpg"></div>
+      <div class="map-point" style="left: 48%; top: 51%;" data-img="pokhara map.jpg"></div>
+      <div class="map-point" style="left: 53%; top: 67%;" data-img="chitawan map.jpg"></div>
+      <div class="map-point" style="left: 35%; top: 66%;" data-img="lumbini place.jpg"></div>
+      <div class="map-point" style="left: 45%; top: 33%;" data-img="mustang map.jpg"></div>
+      <div class="map-point" style="left: 95%; top: 77%;" data-img="ilam map.jpg"></div>
     </div>
   </div>
 </section>
@@ -276,25 +275,25 @@
     </p>
     <div class="grid grid-4 activities">
       <!-- Food Experience Card -->
-      <a href="#" class="card activity">
+      <a href="https://en.wikipedia.org/wiki/Momo_(food)" class="card activity">
         <img src="momo.jpg" alt="Momo Dumplings" loading="lazy">
         <h4>Momo Making</h4>
         <p>Join a hands-on class learning to make Nepal's favorite dumplings.</p>
       </a>
       <!-- Cultural Walk Card -->
-      <a href="#" class="card activity">
+      <a href="https://ntb.gov.np/en/heritage-walk" class="card activity">
         <img src="culture tour.jpg" alt="Cultural Walk" loading="lazy">
         <h4>Cultural Walks</h4>
         <p>Explore ancient temples, local markets & traditional neighborhoods.</p>
       </a>
       <!-- Street Food Card -->
-      <a href="#" class="card activity">
+      <a href="https://fulltimeexplorer.com/street-food-in-nepal/" class="card activity">
         <img src="chatpate.jpg" alt="Street Food" loading="lazy">
         <h4>Street Food Tour</h4>
         <p>Taste local snacks—chatpate, sel roti, and real Nepali tea stalls.</p>
       </a>
       <!-- Festival Card -->
-      <a href="#" class="card activity">
+      <a href="https://www.slurrp.com/article/nepali-festival-foods-for-you-to-savour-1674470113933" class="card activity">
         <img src="sel roti.jpeg" alt="Festival Food" loading="lazy">
         <h4>Festival Eats</h4>
         <p>Join food stalls at Dashain & Tihar to sample mithai & seasonal treats.</p>

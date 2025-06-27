@@ -359,6 +359,19 @@ nav#main-nav a.active {
   box-shadow: 0 2px 8px rgba(248, 251, 255, 0.5);
 }
 
+/* For all cards, place-boxes, and activities: shadow on hover */
+.card:hover,
+.card:focus,
+.place-box:hover,
+.place-box:focus,
+.activity:hover,
+.activity:focus {
+  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18), 0 2px 8px 0 rgba(44, 62, 80, 0.10);
+  transform: translateY(-4px) scale(1.03);
+  border: none;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+
 /* Grid-3 Card Animation & Shadow */
 .grid.grid-3 .card {
   transition: box-shadow 0.3s, transform 0.3s;
@@ -412,15 +425,12 @@ nav#main-nav a.active {
 .map-card-flex {
   position: relative;
   display: flex;
-  gap: 2em;
+  gap: 3em;
   align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 0;
-  height: 540px;           /* Increased height */
-  padding: 2rem;
-  background: none;
-  overflow: hidden;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 2.5rem 1rem;
+  background: none;
 }
 .map-card-flex::before {
   content: "";
@@ -595,22 +605,34 @@ nav#main-nav a.active {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #ccc;
+  border-radius: 10px;
   margin-bottom: 0.5em;
-  background: #f6f8fa;
 }
 .place-name {
   font-weight: 600;
   font-size: 1.08em;
   margin-top: 0.2em;
-  color: var(--primary);
+  color: var(--primary, #136a49);
   letter-spacing: 0.5px;
 }
 
 /* Map points styling */
 .map-card-static {
   position: relative;
+  flex: 1 1 500px;
+  max-width: 600px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.big-map-img {
+  width: 100%;
+  height: 480px;
+  max-width: 600px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
 }
 .map-point {
   position: absolute;
@@ -670,5 +692,19 @@ nav#main-nav a.active {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+section {
+  scroll-margin-top: 100px; /* Adjust to your header height */
+}
+
+/* Additional styles for top places card and map card static */
+.card.top-places-card,
+.map-card-static {
+  background: rgba(255, 255, 255, 0.18); /* semi-transparent white */
+  backdrop-filter: blur(10px);            /* glass effect */
+  -webkit-backdrop-filter: blur(10px);    /* Safari support */
+  box-shadow: 0 2px 12px #0001;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
