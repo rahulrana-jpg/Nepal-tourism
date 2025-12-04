@@ -41,28 +41,31 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Contact form validation (simple)
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = this.name.value.trim();
-    const email = this.email.value.trim();
-    const message = this.message.value.trim();
-    const formMessage = document.getElementById('form-message');
-    if (!name || !email || !message) {
-      formMessage.textContent = 'Please fill out all fields.';
-      formMessage.style.color = "#e74c3c";
-      return;
-    }
-    // Simple email validation
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      formMessage.textContent = 'Please enter a valid email address.';
-      formMessage.style.color = "#e74c3c";
-      return;
-    }
-    // Simulate send
-    formMessage.textContent = 'Thank you for contacting us!';
-    formMessage.style.color = "#136a49";
-    this.reset();
-  });
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const formMessage = document.getElementById('form-message');
+      if (!name || !email || !message) {
+        formMessage.textContent = 'Please fill out all fields.';
+        formMessage.style.color = "#e74c3c";
+        return;
+      }
+      // Simple email validation
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.style.color = "#e74c3c";
+        return;
+      }
+      // Simulate send
+      formMessage.textContent = 'Thank you for contacting us!';
+      formMessage.style.color = "#136a49";
+      this.reset();
+    });
+  }
 
   
 
