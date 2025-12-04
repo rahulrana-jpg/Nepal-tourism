@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal Tourism Escrow System | Secure Booking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="escrow.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header-animate">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Nepal Tourism Home" style="display: flex; align-items: center;">
+        <video src="Animation - 1750787845805.webm" type="video/webm" loading="lazy" alt="Nepal Tourism Logo" autoplay muted loop playsinline style="height:90px; width:auto; margin-right:8px;"></video>
+        <span>Nepal Tourism</span>
+      </a>
+      <nav id="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="escrow.html" class="active">Escrow Booking</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="escrow-hero">
+    <div class="escrow-hero-content">
+      <h1>🛡️ Secure Escrow Booking System</h1>
+      <p>Book your Nepal adventure with confidence. Your payment is held securely until service completion.</p>
+    </div>
+  </section>
+
+  <!-- ESCROW SYSTEM DASHBOARD -->
+  <section class="section">
+    <div class="container">
+      <div class="escrow-tabs">
+        <button class="escrow-tab active" data-tab="create">Create Booking</button>
+        <button class="escrow-tab" data-tab="manage">Manage Bookings</button>
+        <button class="escrow-tab" data-tab="about">How It Works</button>
+      </div>
+
+      <!-- CREATE BOOKING TAB -->
+      <div id="create-tab" class="escrow-content active">
+        <div class="escrow-form-container">
+          <h2>Create New Escrow Booking</h2>
+          <form id="escrow-form" class="escrow-form">
+            <div class="form-group">
+              <label for="service-type">Service Type *</label>
+              <select id="service-type" name="serviceType" required>
+                <option value="">Select a service...</option>
+                <option value="trekking">Trekking Package</option>
+                <option value="cultural">Cultural Tour</option>
+                <option value="wildlife">Wildlife Safari</option>
+                <option value="wellness">Wellness & Meditation</option>
+                <option value="adventure">Adventure Sports</option>
+                <option value="custom">Custom Package</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="buyer-name">Your Name *</label>
+                <input type="text" id="buyer-name" name="buyerName" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="buyer-email">Your Email *</label>
+                <input type="email" id="buyer-email" name="buyerEmail" placeholder="john@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="provider-name">Service Provider Name *</label>
+                <input type="text" id="provider-name" name="providerName" placeholder="Nepal Adventure Tours" required>
+              </div>
+              <div class="form-group">
+                <label for="provider-email">Provider Email *</label>
+                <input type="email" id="provider-email" name="providerEmail" placeholder="provider@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="amount">Booking Amount (NPR) *</label>
+                <input type="number" id="amount" name="amount" placeholder="50000" min="0" step="100" required>
+              </div>
+              <div class="form-group">
+                <label for="start-date">Service Start Date *</label>
+                <input type="date" id="start-date" name="startDate" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Service Description *</label>
+              <textarea id="description" name="description" rows="4" placeholder="Describe the service, itinerary, and any special requirements..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="terms">Terms & Conditions *</label>
+              <textarea id="terms" name="terms" rows="3" placeholder="Enter specific terms for this booking (cancellation policy, refund terms, etc.)" required></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" id="agree-terms" name="agreeTerms" required>
+                I agree to the escrow terms and conditions
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Escrow Booking</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- MANAGE BOOKINGS TAB -->
+      <div id="manage-tab" class="escrow-content">
+        <div class="bookings-container">
+          <h2>Your Escrow Bookings</h2>
+          <div class="search-filter">
+            <input type="text" id="search-bookings" placeholder="Search by booking ID, name, or service...">
+            <select id="filter-status">
+              <option value="all">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="funded">Funded</option>
+              <option value="completed">Completed</option>
+              <option value="disputed">Disputed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div id="bookings-list" class="bookings-list">
+            <p class="no-bookings">No bookings found. Create your first booking to get started!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS TAB -->
+      <div id="about-tab" class="escrow-content">
+        <div class="how-it-works">
+          <h2>How the Escrow System Works</h2>
+          
+          <div class="step-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Create Booking</h3>
+              <p>Buyer and provider agree on service details and create an escrow booking with payment amount, terms, and conditions.</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Fund Escrow</h3>
+              <p>Buyer deposits the agreed amount into the escrow account. Funds are held securely and cannot be accessed by either party.</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Service Delivery</h3>
+              <p>Provider delivers the agreed service (tour, trekking, activities) according to the booking terms and timeline.</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">4</div>
+              <h3>Confirm Completion</h3>
+              <p>Buyer confirms service completion and satisfaction. Both parties must confirm for funds to be released.</p>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">5</div>
+              <h3>Release Payment</h3>
+              <p>Once both parties confirm, funds are automatically released to the service provider. Transaction complete!</p>
+            </div>
+          </div>
+
+          <div class="benefits">
+            <h3>Benefits of Using Escrow</h3>
+            <ul>
+              <li>✅ <strong>Security:</strong> Your payment is protected until service completion</li>
+              <li>✅ <strong>Trust:</strong> Both parties are assured of fair transaction</li>
+              <li>✅ <strong>Transparency:</strong> All parties can track booking status in real-time</li>
+              <li>✅ <strong>Dispute Resolution:</strong> Neutral third-party mediation available</li>
+              <li>✅ <strong>Automated:</strong> Smart rules ensure fair and timely payment release</li>
+            </ul>
+          </div>
+
+          <div class="status-guide">
+            <h3>Booking Status Guide</h3>
+            <div class="status-items">
+              <div class="status-item">
+                <span class="status-badge pending">Pending</span>
+                <p>Booking created, awaiting buyer funding</p>
+              </div>
+              <div class="status-item">
+                <span class="status-badge funded">Funded</span>
+                <p>Payment deposited, service can begin</p>
+              </div>
+              <div class="status-item">
+                <span class="status-badge completed">Completed</span>
+                <p>Service delivered and confirmed, payment released</p>
+              </div>
+              <div class="status-item">
+                <span class="status-badge disputed">Disputed</span>
+                <p>Issue raised, under mediation</p>
+              </div>
+              <div class="status-item">
+                <span class="status-badge cancelled">Cancelled</span>
+                <p>Booking cancelled, refund processed if applicable</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Nepal Tourism Board. All Rights Reserved.</p>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Booking Detail Modal -->
+  <div id="booking-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="booking-detail"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="escrow.js"></script>
+</body>
+</html>
